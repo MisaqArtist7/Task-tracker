@@ -6,7 +6,87 @@
     <title>Task tracker</title>
     <link rel="stylesheet" href="assets/style/output.css">
 </head>
-<body>
-    
+<body class="min-h-screen bg-white flex items-center justify-center p-4">
+
+    <main class="w-full max-w-4xl border-4 border-gray-800 rounded-[30px] p-8 md:p-14">
+
+        <!-- Title -->
+        <h1 class="text-4xl md:text-5xl font-medium text-gray-800 mb-10">
+            Task Tracker
+        </h1>
+
+        <!-- Add Task -->
+        <form id="task-form" class="mb-12">
+            <div class="flex items-center border-4 border-gray-700 rounded-2xl overflow-hidden">
+
+                <input
+                    id="task-input"
+                    type="text"
+                    placeholder="Start writing and press enter to create task"
+                    class="flex-1 min-w-0 px-6 py-5 text-xl md:text-2xl text-gray-800 placeholder-gray-300 outline-none"
+                />
+
+                <button
+                    type="submit"
+                    class="w-20 h-16 mr-2 bg-black text-white rounded-xl text-4xl flex items-center justify-center hover:bg-gray-800 transition"
+                    aria-label="Add task"
+                >
+                    ↵
+                </button>
+
+            </div>
+        </form>
+
+        <!-- Tasks -->
+        <ul id="task-list" class="space-y-0">
+
+            <!-- Completed Task -->
+            <li class="task-item flex items-center gap-5 py-4 border-b-4 border-gray-200">
+
+                <input
+                    type="checkbox"
+                    checked
+                    class="task-checkbox w-12 h-12 shrink-0 accent-gray-500 cursor-pointer"
+                />
+
+                <span class="task-text flex-1 text-2xl md:text-3xl text-gray-400 line-through">
+                    Complete tasks show at the end with strikethrough
+                </span>
+
+                <button
+                    class="delete-btn shrink-0 text-3xl text-black hover:text-gray-500 transition"
+                    aria-label="Delete task"
+                >
+                    🗑
+                </button>
+
+            </li>
+
+            <li class="task-item flex items-center gap-5 py-4 border-b-4 border-gray-200">
+
+                <input
+                    type="checkbox"
+                    checked
+                    class="task-checkbox w-12 h-12 shrink-0 accent-gray-500 cursor-pointer"
+                />
+
+                <span class="task-text flex-1 text-2xl md:text-3xl text-gray-400 line-through">
+                    Marking incomplete will put it back in pending list
+                </span>
+
+                <button
+                    class="delete-btn shrink-0 text-3xl text-black hover:text-gray-500 transition"
+                    aria-label="Delete task"
+                >
+                    🗑
+                </button>
+
+            </li>
+
+        </ul>
+
+    </main>
+
+    <script src="assets/js/app.js"></script>
 </body>
 </html>
